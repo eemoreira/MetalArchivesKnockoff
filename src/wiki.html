@@ -10,8 +10,11 @@
 
         <header>
             <h1>Welcome to the Metal Wiki</h1>
+            <p id="greeting"></p> <!-- mensagem de boas-vindas será inserida aqui -->
             <p>This is a platform for sharing knowledge and resources related to metal genres and its subgenres.</p>
         </header>
+
+
 
         <h2>Explore Songs</h2>
 
@@ -80,5 +83,29 @@
             <a href="power_metal_subgenres.html">Explore Power Metal Subgenres</a>
         </figure>
 
+            
+    <script>
+        // lê username da query string e exibe mensagem formatada
+        document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(location.search);
+        // checa 'username' (campo do form de login)
+        const rawName = params.get('username');
+        if (!rawName) return; // se não veio nome, não mostra nada
+
+        // segura: exibe como texto puro (textContent) para evitar XSS
+        const name = rawName.trim();
+        if (!name) return;
+
+        // formata data dd/mm/yyyy
+        const d = new Date();
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const year = d.getFullYear();
+        const dateStr = `${day}/${month}/${year}`;
+
+        const msg = `Hello ${name}, today is ${dateStr}`;
+        document.getElementById('greeting').textContent = msg;
+        });
+    </script>
     </body>
 </html>

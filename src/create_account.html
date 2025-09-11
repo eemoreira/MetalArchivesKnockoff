@@ -1,26 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <title>Create Account</title>
     <meta charset="UTF-8">
+    <head>
+        <title>Create Account</title>
+    </head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<section>
-    <form action="login.html">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+  <form name="TCheck" id="TCheck" action="login.html" method="get" onsubmit="return CheckFields()">
+    <div>
+      <label>Nome: <input type="text" name="nome" id="nome" onfocus="selectField(this)" onclick="selectField(this)"></label>
+    </div>
+    <div>
+      <label>Email: <input type="email" name="email" id="email" onfocus="selectField(this)" onclick="selectField(this)"></label>
+    </div>
+    <div>
+      <label>Senha: <input type="password" name="senha" id="senha" onfocus="selectField(this)" onclick="selectField(this)"></label>
+    </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <input type="hidden" name="Muda" id="Muda">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+    <div>
+      <label><input type="checkbox" name="Opt1" id="Opt1" onclick="AltMaiusc()"> MAIÚSCULAS</label>
+      <label><input type="checkbox" name="Opt2" id="Opt2" onclick="AltMinusc()"> minúsculas</label>
+    </div>
 
-        <input type="submit" value="Create Account">
-        <input type="submit" value="Already have an account?">
-    </form>
-</section>
+    <div>
+      <input type="submit" value="Enviar">
+      <a href="login.html" style="margin-left:12px;">Já tem conta? Entrar</a>
+    </div>
+  </form>
+
+  <script>
+    let currentField = null;
+
+
+    function CheckFields() {
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value.trim();
+
+      if (!nome || !email || !senha) {
+        alert("Please fill in all fields.");
+        return false;
+      }
+      alert("Account created successfully! Redirecting to the login page.");
+      return true; 
+    }
+
+    function selectField(el) {
+      currentField = el;
+      document.TCheck.Muda.value = el.value || "";
+    }
+
+    ['nome','email','senha'].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('input', () => {
+        if (currentField === el) document.TCheck.Muda.value = el.value;
+      });
+    });
+
+    function AltMaiusc () {
+      if (!currentField) currentField = document.getElementById('nome');
+      document.TCheck.Muda.value = currentField.value.toUpperCase();
+      document.TCheck.Opt1.checked = false;
+      currentField.value = document.TCheck.Muda.value;
+    }
+
+    function AltMinusc () {
+      if (!currentField) currentField = document.getElementById('nome');
+      document.TCheck.Muda.value = currentField.value.toLowerCase();
+      document.TCheck.Opt2.checked = false;
+      currentField.value = document.TCheck.Muda.value;
+    }
+  </script>
 </body>
 </html>
