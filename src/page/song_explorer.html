@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <head>
+        <title>Song Explorer</title>
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Song Explorer</h1>
+        <p>Explore songs from your favorite metal bands.</p>
+    </header>
+
+    <ul>
+        <li><a href="wiki.html">Back to Main Wiki</a></li>
+    </ul>
+
+    <table border="1">
+        <tr>
+            <th>Band</th>
+            <th>Genre</th>
+            <th>Song</th>
+        </tr>
+        <tr>
+            <td>Metallica</td>
+            <td>Thrash Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=CD-E-LDc384&list=RDCD-E-LDc38">Enter Sandman</a></td>
+        </tr>
+        <tr>
+            <td>Iron Maiden</td>
+            <td>Heavy Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=X4bgXH3sJ2Q&list=RDX4bgXH3sJ2Q">The Trooper</a></td>
+        </tr>
+        <tr>
+            <td>Black Sabbath</td>
+            <td>Heavy Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=0qanlG1s3mA&list=RDX4bgXH3sJ2Q">Paranoid</a></td>
+        </tr>
+        <tr>
+            <td>Death</td>
+            <td>Death Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=2s8d3k1b9c4">Symbolic</a></td>
+        </tr>
+        <tr>
+            <td>Morbid Angel</td>
+            <td>Death Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=2s8d3k1b9c4">Chapel of Ghouls</a></td>
+        </tr>
+        <tr>
+            <td>Megadeth</td>
+            <td>Thrash Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=8y0g2g2g2g2">Holy Wars... The Punishment Due</a></td>
+        </tr>
+        <tr>
+            <td>Slayer</td>
+            <td>Thrash Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=8y0g2g2g2g2">Raining Blood</a></td>
+        </tr>
+        <tr>
+            <td>Mayhem</td>
+            <td>Black Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=8y0g2g2g2g2">Freezing Moon</a></td>
+        </tr>
+        <tr>
+            <td>Bathory</td>
+            <td>Black Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=8y0g2g2g2g2">One Rode to Asa Bay</a></td>
+        </tr>
+        <tr>
+            <td>Dragonforce</td>
+            <td>Power Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=8y0g2g2g2g2">Through the Fire and Flames</a></td>
+        </tr>
+        <tr>
+            <td>Blind Guardian</td>
+            <td>Power Metal</td>
+            <td><a href="https://www.youtube.com/watch?v=8y0g2g2g2g2">Mirror Mirror</a></td>
+        </tr>
+    </table>
+    <h2>Album Gallery</h2>
+    <div class="dw-controls">
+        <button id="shuffleBtn" class="dw-btn">shuffle albums</button>
+        <button id="resetBtn" class="dw-btn">reset album order</button>
+    </div>
+    <script type="module">
+        import initGallery from '../js/gallery.js';
+        const bandNames = [
+            "Agalloch", "Alcest", "Ancient Bards", "Aura Noir", "Bathory", "Black Sabbath",
+            "Blind Guardian", "Candlemass", "Crowbar", "Deafheaven", "Death", "Dimmu Borgir",
+            "Dragonforce", "Dream Theater", "D.R.I.", "Dying Fetus", "Emperor", "Epica",
+            "Eyehategod", "Finntroll", "Gojira", "In Flames", "Intestine Baalism", "Iron Maiden",
+            "Korpiklaani", "Lamb of God", "Mayhem", "Megadeth", "Metallica", "Morbid Angel",
+            "Necrophagist", "Nightwish", "Opeth", "Pantera", "Slayer", "Sleep", "Sodom",
+            "Suicidal Tendencies", "Wolves in the Throne Room"
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.galleryAPI = initGallery({ gallerySelector: '.dwimage-gallery', bandNames });
+        });
+    </script>
+    <figure>
+        <div class="dwimage-gallery">
+            <img src="res/agalloch.jpg" alt="Agalloch Image">
+            <img src="res/alcest.jpg" alt="Alcest Image">
+            <img src="res/ancient_bards.jpg" alt="Ancient Bards Image">
+            <img src="res/aura_noir.jpg" alt="Aura Noir Image">
+            <img src="res/bathory.jpeg" alt="Bathory Image">
+            <img src="res/black_sabbath.jpg" alt="Black Sabbath Image">
+            <img src="res/blind_guardian.jpg" alt="Blind Guardian Image">
+            <img src="res/candlemass.jpg" alt="Candlemass Image">
+            <img src="res/crowbar.jpg" alt="Crowbar Image">
+            <img src="res/deafheaven.jpg" alt="Deafheaven Image">
+            <img src="res/death.jpg" alt="Death Image">
+            <img src="res/dimmu_borgir.jpg" alt="Dimmu Borgir Image">
+            <img src="res/dragonforce.jpg" alt="Dragonforce Image">
+            <img src="res/dream_theater.jpg" alt="Dream Theater Image">
+            <img src="res/dri.jpg" alt="D.R.I. Image">
+            <img src="res/dying_fetus.jpg" alt="Dying Fetus Image">
+            <img src="res/emperor.jpg" alt="Emperor Image">
+            <img src="res/epica.jpg" alt="Epica Image">
+            <img src="res/eyehategod.jpg" alt="Eyehategod Image">
+            <img src="res/finntroll.png" alt="Finntroll Image">
+            <img src="res/gojira.jpg" alt="Gojira Image">
+            <img src="res/in_flames.jpg" alt="In Flames Image">
+            <img src="res/intestine_baalism.jpg" alt="Intestine Baalism Image">
+            <img src="res/iron_maiden.jpg" alt="Iron Maiden Image">
+            <img src="res/korpiklaani.jpg" alt="Korpiklaani Image">
+            <img src="res/lamb_of_god.jpg" alt="Lamb of God Image">
+            <img src="res/mayhem.jpg" alt="Mayhem Image">
+            <img src="res/megadeth.jpg" alt="Megadeth Image">
+            <img src="res/metallica.png" alt="Metallica Image">
+            <img src="res/morbid_angel.jpg" alt="Morbid Angel Image">
+            <img src="res/necrophagist.jpg" alt="Necrophagist Image">
+            <img src="res/nightwish.jpg" alt="Nightwish Image">
+            <img src="res/opeth.jpg" alt="Opeth Image">
+            <img src="res/pantera.jpg" alt="Pantera Image">
+            <img src="res/slayer.jpg" alt="Slayer Image">
+            <img src="res/sleep.jpg" alt="Sleep Image">
+            <img src="res/sodom.jpg" alt="Sodom Image">
+            <img src="res/suicidal_tendencies.jpg" alt="Suicidal Tendencies Image">
+            <img src="res/wolves_in_the_throne_room.jpg" alt="Wolves in the Throne Room Image">
+        </div>
+    </figure>
+</body>
+</html>
